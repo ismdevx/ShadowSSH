@@ -1,0 +1,108 @@
+{
+  "name": "shadowssh",
+  "productName": "ShadowSSH",
+  "version": "1.0.0",
+  "description": "Modern desktop SSH client with session management, SFTP tools, key generation",
+  "homepage": "https://github.com/ismdevx/ShadowSSH",
+  "main": "dist-electron/main/main.js",
+  "author": {
+    "name": "ismdevx",
+    "email": "notzero0@outlook.com"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k --success=first \"npm:dev:renderer\" \"npm:dev:electron:watch\" \"npm:dev:electron\"",
+    "dev:renderer": "vite",
+    "dev:electron:watch": "concurrently -k \"tsc -p tsconfig.electron.json --watch --preserveWatchOutput\" \"tsc -p tsconfig.preload.json --watch --preserveWatchOutput\"",
+    "dev:electron": "wait-on tcp:5173 dist-electron/main/main.js dist-electron/preload/preload.js && rm -f node_modules/.bin/ShadowSSH && ln -s electron node_modules/.bin/ShadowSSH && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 ./node_modules/.bin/ShadowSSH --ozone-platform=wayland --enable-features=WaylandWindowDecorations --disable-gpu .",
+    "build": "npm run build:renderer && npm run build:electron",
+    "build:renderer": "vite build",
+    "build:electron": "tsc -p tsconfig.electron.json && tsc -p tsconfig.preload.json",
+    "typecheck": "tsc -p tsconfig.electron.json --noEmit && tsc -p tsconfig.preload.json --noEmit && tsc -p tsconfig.renderer.json --noEmit",
+    "start": "npm run build && electron --ozone-platform=wayland --enable-features=WaylandWindowDecorations --no-sandbox .",
+    "dist": "npm run build && electron-builder --linux",
+    "dist:win": "npm run build && electron-builder --win",
+    "dist:win:x64": "npm run build && electron-builder --win --x64",
+    "dist:win:portable": "npm run build && electron-builder --win portable --x64",
+    "dist:win:x64:portable": "npm run build && electron-builder --win portable --x64",
+    "dist:mac": "npm run build && electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.ismdevx.shadowssh",
+    "productName": "ShadowSSH",
+    "directories": {
+      "output": "dist-packages",
+      "buildResources": "public"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "public/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "public/icons",
+      "executableName": "shadowssh",
+      "executableArgs": ["--ozone-platform=wayland", "--enable-features=WaylandWindowDecorations"],
+      "category": "Network",
+      "maintainer": "ismdevx <ismdevx@users.noreply.github.com>",
+      "description": "Modern desktop SSH client with session management, SFTP tools, key generation, and built-in auto updates.",
+      "desktop": {
+        "entry": {
+          "Name": "ShadowSSH",
+          "StartupWMClass": "shadowssh",
+          "X-GNOME-WMClass": "shadowssh"
+        }
+      }
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": "public/icons/icon.ico",
+      "signAndEditExecutable": false,
+      "artifactName": "ShadowSSH-${version}-${arch}.${ext}"
+    },
+    "mac": {
+      "target": ["dmg"],
+      "icon": "public/os-icons/shadowssh-logo.png"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "ismdevx",
+      "repo": "ShadowSSH"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.3",
+    "ssh2": "^1.17.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/ssh2": "^1.15.5",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^41.2.1",
+    "electron-builder": "^26.8.1",
+    "postcss": "^8.5.10",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.8",
+    "wait-on": "^9.0.5"
+  }
+}
