@@ -28,30 +28,35 @@
 
 ## Features
 
-### Terminal
-- **Multi-tab SSH sessions** — open unlimited connections simultaneously, each with its own tab and status indicator
-- **Full xterm.js terminal** — true color support, scrollback buffer, keyboard shortcuts
-- **8 terminal themes** — Oceanic, Matrix, Amber, Nord, Dracula, Solarized, Green, White
+### 🖥️ Terminal
+- 🗂️ **Multi-tab SSH sessions** — open unlimited connections simultaneously, each with its own tab and status indicator
+- ⚡ **Full xterm.js terminal** — true color support, scrollback buffer, keyboard shortcuts
+- 🎨 **8 terminal themes** — Oceanic, Matrix, Amber, Nord, Dracula, Solarized, Green, White
 
-### File Management
-- **SFTP browser** — navigate, upload, download, rename, delete remote files without leaving the app
-- **Configurable start path** — set a default SFTP directory per host
+### 📁 File Management
+- 📂 **SFTP browser** — navigate, upload, download, rename, delete remote files without leaving the app
+- 📌 **Configurable start path** — set a default SFTP directory per host
 
-### Host & Key Management
-- **Host manager** — save hosts with labels, OS icons, auth settings, and jump server config
-- **20+ distro icons** — automatic OS detection with matching icons (Ubuntu, Arch, Kali, Debian, and more)
-- **SSH key generation** — generate Ed25519 / RSA keys directly in the app
-- **Jump host / proxy** — connect through a bastion server with full credential support
+### 🔐 Security & Privacy
+- 🏠 **100% local & offline** — no cloud, no telemetry, no account required. Everything stays on your machine
+- 🔒 **Fully encrypted storage** — all saved hosts, passwords, and passphrases are encrypted at rest using AES-256 via electron-store
+- 🗝️ **Private key support** — connect using Ed25519 or RSA keys; keys never leave your machine and are never transmitted or logged
+- 🛡️ **SSH key generator** — generate strong Ed25519 / RSA keys directly in the app, no terminal required
+- 🌐 **Jump host / proxy** — securely connect through a bastion server with full credential support
 
-### Productivity
-- **Config file editor** — edit remote config files in-app
-- **Live connection monitor** — see all active sessions and their state at a glance
-- **Backup & restore** — export your saved hosts to a file and re-import on any machine
-- **Auto updates** — checks for new releases automatically via GitHub
+### 🖥️ Host Management
+- 📋 **Host manager** — save hosts with labels, OS icons, auth settings, and jump server config
+- 🐧 **20+ distro icons** — automatic OS detection with matching icons (Ubuntu, Arch, Kali, Debian, and more)
 
-### Appearance
-- **3 UI themes** — Dark, Light, and Onyx
-- **Customizable font size & font family** — tweak the terminal to your preference
+### 🛠️ Productivity
+- 📝 **Config file editor** — edit remote config files in-app
+- 📡 **Live connection monitor** — see all active sessions and their state at a glance
+- 💾 **Backup & restore** — export your saved hosts to a file and re-import on any machine
+- 🔄 **Auto updates** — checks for new releases automatically via GitHub
+
+### 🎨 Appearance
+- 🌗 **3 UI themes** — Dark, Light, and Onyx
+- 🔤 **Customizable font size & font family** — tweak the terminal to your preference
 
 ---
 
