@@ -18,12 +18,11 @@
 
 ---
 
-## Screenshots
+## App Preview
 
-<p align="center">
-  <img src="public/screenshots/terminal-view.png" alt="Terminal View" width="49%" />
-  <img src="public/screenshots/sftp-browser.png" alt="SFTP Browser" width="49%" />
-</p>
+| SSH Terminal | SFTP File Browser |
+|:---:|:---:|
+| ![SSH Terminal](public/screenshots/terminal-view.png) | ![SFTP File Browser](public/screenshots/sftp-browser.png) |
 
 ---
 
