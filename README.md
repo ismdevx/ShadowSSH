@@ -38,7 +38,7 @@
 - 📌 **Configurable start path** — set a default SFTP directory per host
 
 ### 🔐 Security & Privacy
-- 🏠 **100% local & offline** — no cloud, no telemetry, no account required. Everything stays on your machine
+- 🏠 **100% local** — no cloud, no telemetry, no account required. Everything stays on your machine
 - 🔒 **Fully encrypted storage** — all saved hosts, passwords, and passphrases are encrypted at rest using AES-256 via electron-store
 - 🗝️ **Private key support** — connect using Ed25519 or RSA keys; keys never leave your machine and are never transmitted or logged
 - 🛡️ **SSH key generator** — generate strong Ed25519 / RSA keys directly in the app, no terminal required
