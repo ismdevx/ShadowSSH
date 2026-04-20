@@ -21,8 +21,8 @@
 ## Screenshots
 
 <p align="center">
-  <img src="public/screenshots/screenshot-terminal.png" alt="Terminal View" width="49%" />
-  <img src="public/screenshots/screenshot-sftp.png" alt="SFTP Browser" width="49%" />
+  <img src="public/screenshots/terminal-view.png" alt="Terminal View" width="49%" />
+  <img src="public/screenshots/sftp-browser.png" alt="SFTP Browser" width="49%" />
 </p>
 
 ---
